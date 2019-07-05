@@ -29,21 +29,27 @@ const App = () => {
 	return (
 		<React.Fragment>
 			<Filter filter={filter} handleFilter={handleFilter} />
-			<ul>
-				{filteredCountries.length === 1
-					? filteredCountries.map(country => (
+			{filter && (
+				<ul>
+					{filteredCountries.length === 1 ? (
+						filteredCountries.map(country => (
 							<Country
 								country={country}
 								key={country.alpha3Code}
 							/>
-					  ))
-					: filteredCountries.map(country => (
+						))
+					) : filteredCountries.length >= 10 ? (
+						<li>Too many matches, please be more precise.</li>
+					) : (
+						filteredCountries.map(country => (
 							<Countries
 								country={country}
 								key={country.alpha3Code}
 							/>
-					  ))}
-			</ul>
+						))
+					)}
+				</ul>
+			)}
 		</React.Fragment>
 	)
 }
