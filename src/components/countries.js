@@ -3,7 +3,7 @@ import React, { useState } from "react"
 import Country from "./country"
 
 const Countries = ({ country }) => {
-	const [countryInfo, setCountryInfo] = useState({})
+	const [countryInfo, setCountryInfo] = useState(null)
 
 	const handleToggle = () => {
 		console.log(`clicked on ${country.name}`)
@@ -13,7 +13,11 @@ const Countries = ({ country }) => {
 	return (
 		<li onClick={() => handleToggle()}>
 			{country.name}
-			{countryInfo && <Country country={countryInfo} />}
+			{countryInfo && (
+				<ul>
+					<Country country={country} />
+				</ul>
+			)}
 		</li>
 	)
 }
