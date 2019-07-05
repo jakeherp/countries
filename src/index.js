@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react"
 import ReactDOM from "react-dom"
 import axios from "axios"
 
+import Filter from "./components/filter"
 import Countries from "./components/countries"
 import Country from "./components/country"
 
@@ -27,15 +28,7 @@ const App = () => {
 
 	return (
 		<React.Fragment>
-			<form onSubmit={e => e.preventDefault()}>
-				<div>
-					<input
-						value={filter}
-						placeholder="Find a country"
-						onChange={handleFilter}
-					/>
-				</div>
-			</form>
+			<Filter filter={filter} handleFilter={handleFilter} />
 			<ul>
 				{filteredCountries.length === 1
 					? filteredCountries.map(country => (
