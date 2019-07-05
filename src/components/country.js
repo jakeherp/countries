@@ -27,13 +27,15 @@ const Country = ({ country }) => {
 				{country.name}
 			</h2>
 			<ul>
-				<li>Capital: {country.capital}</li>
 				<li>
-					Population:{" "}
+					<strong>Capital:</strong> {country.capital}
+				</li>
+				<li>
+					<strong>Population:</strong>{" "}
 					{country.population.toLocaleString(navigator.language, 0)}
 				</li>
 				<li>
-					Official languages:
+					<strong>Official languages:</strong>
 					<ul>
 						{country.languages.map(lang => (
 							<li key={lang.iso639_1}>{lang.name}</li>

@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react"
 import ReactDOM from "react-dom"
 import axios from "axios"
 
+import "./index.css"
+
 import Filter from "./components/filter"
 import Countries from "./components/countries"
 import Country from "./components/country"
